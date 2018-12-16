@@ -1,3 +1,5 @@
+//Shelter that operates on a first in, first out basis
+
 //Animal shelter class
 class AnimalShelter {
   constructor() {

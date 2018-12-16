@@ -1,4 +1,4 @@
-//Route between node: given a directed graph, design an algorithm to find out whether there is a route between 2 nodes.
+//Implementation of dfs recursive
 let { NodeG } = require('./Implementation');
 
 let n1 = new NodeG(1);
@@ -16,7 +16,6 @@ n5.adjacent = [n6];
 function dfsrecursive(root) {
   if (root !== null) {
     root.visited = true;
-    console.log(root.value);
     if (root.adjacent) {
       for (let adj of root.adjacent) {
         if (adj.visited === false) dfsrecursive(adj);

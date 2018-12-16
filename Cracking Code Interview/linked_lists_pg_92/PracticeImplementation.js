@@ -1,3 +1,7 @@
+//This file has implementations for both singly lisked lists and doubly linked lists
+//as well as common methods for each
+
+//Node for a single linked list
 class Node_s {
   constructor(value) {
     this.value = value;
@@ -5,6 +9,7 @@ class Node_s {
   }
 }
 
+//Node for a doubly linked list
 class Node_d {
   constructor(value) {
     this.value = value;
@@ -13,12 +18,14 @@ class Node_d {
   }
 }
 
+//Class for a doubly linked list
 class DLinkedList {
   constructor() {
     this.head = undefined;
     this.length = 0;
   }
 
+  //Add a value to the front of the list
   addToFront(value) {
     let node = new Node_d(value);
     if (!this.head) {
@@ -32,6 +39,7 @@ class DLinkedList {
     return this;
   }
 
+  //Add a value to the end of the list
   addToEnd(value) {
     let node = new Node_d(value);
     let currNode = this.head;
@@ -49,6 +57,7 @@ class DLinkedList {
     }
   }
 
+  //List the elements of the list
   listElements(value) {
     let currNode = this.head;
     while (currNode) {
@@ -57,6 +66,7 @@ class DLinkedList {
     }
   }
 
+  //Reverse the list
   reverse() {
     if (this.length <= 1) return this;
     let next;
@@ -74,12 +84,14 @@ class DLinkedList {
   }
 }
 
+// Class for a singly linked list
 class SLinkedList {
   constructor() {
     this.head = undefined;
     this.length = 0;
   }
 
+  // Add a value to the front of the list
   addToFront(value) {
     let node = new Node_s(value);
     if (this.head) {
@@ -92,6 +104,7 @@ class SLinkedList {
     return this;
   }
 
+  // Add a value to the end of the list
   addToEnd(value) {
     let node = new Node_s(value);
     let currNode = this.head;
@@ -110,6 +123,7 @@ class SLinkedList {
     return this;
   }
 
+  // Delete a specific value from the list
   delete(value) {
     let currNode = this.head;
     if (currNode.value === value) {
@@ -128,6 +142,7 @@ class SLinkedList {
     return this;
   }
 
+  // List the elements of the list
   listElements() {
     let currNode = this.head;
     while (currNode) {
@@ -136,6 +151,7 @@ class SLinkedList {
     }
   }
 
+  // Remove duplicate values from the list
   removeDup() {
     let seen = new Set([this.head.value]);
     let currNode = this.head;
@@ -154,6 +170,7 @@ class SLinkedList {
     return this;
   }
 
+  // Get length of the list
   getLength() {
     if (this.head === undefined) {
       return 0;
@@ -167,6 +184,7 @@ class SLinkedList {
     return length;
   }
 
+  // Get the k to last node
   kToLast(k) {
     let length = this.length;
     let currNode = this.head;
@@ -177,6 +195,7 @@ class SLinkedList {
     return currNode;
   }
 
+  // Reverse the list
   reverse() {
     if (this.length <= 1) return this;
     let currNode = this.head;
@@ -193,17 +212,3 @@ class SLinkedList {
     }
   }
 }
-
-let siLinkedList = new DLinkedList();
-siLinkedList.addToFront(5);
-siLinkedList.addToFront(4);
-siLinkedList.addToFront(3);
-siLinkedList.addToFront(2);
-siLinkedList.addToFront(1);
-siLinkedList.reverse();
-siLinkedList.listElements();
-// console.log(siLinkedList.head.value);
-// console.log(siLinkedList.head.next.value);
-// console.log(siLinkedList.head.next.next.value);
-// console.log(siLinkedList.head.next.next.next.value);
-// console.log(siLinkedList.head.next.next.next.next.value);
