@@ -1,7 +1,7 @@
 const { Queue } = require('../stacks-queues/implementation');
 
 //Node class for a binary tree
-class NodeB {
+class Node {
   constructor(value, left = null, right = null) {
     this.value = value;
     this.left = left;
@@ -93,7 +93,7 @@ class NodeB {
 }
 
 //Class for binary tree
-class BTree {
+class Tree {
   constructor(root = null) {
     this.root = root;
   }
@@ -115,19 +115,21 @@ class BTree {
 }
 
 //Make a binary tree
-let nb1 = new NodeB(1);
-let nb2 = new NodeB(2);
-let nb3 = new NodeB(3);
-let nb4 = new NodeB(4);
-let nb5 = new NodeB(5);
-let nb6 = new NodeB(6);
-let nb7 = new NodeB(7);
+let n1 = new Node(1);
+let n2 = new Node(2);
+let n3 = new Node(3);
+let n4 = new Node(4);
+let n5 = new Node(5);
+let n6 = new Node(6);
+let n7 = new Node(7);
 
-nb1.left = nb2;
-nb1.right = nb3;
-nb2.left = nb4;
-nb2.right = nb5;
-nb3.right = nb6;
-nb6.left = nb7;
+n1.left = n2;
+n1.right = n3;
+n2.left = n4;
+n2.right = n5;
+n3.right = n6;
+n6.left = n7;
 
-let tB = new BTree(nb1);
+let t = new Tree(n1);
+
+console.log(t.maxSum());
