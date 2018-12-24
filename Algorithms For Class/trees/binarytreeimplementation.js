@@ -132,4 +132,7 @@ n6.left = n7;
 
 let t = new Tree(n1);
 
-console.log(t.maxSum());
+module.exports = {
+  Tree,
+  Node
+};
