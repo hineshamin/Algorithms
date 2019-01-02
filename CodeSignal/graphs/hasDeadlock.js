@@ -6,7 +6,3 @@ function hasDeadlock(connections, i = 0, num = 0) {
   }
   return false;
 }
-
-let connections = [[1, 2, 3], [2, 3], [3], []];
-// let connections = [[1], [2], [3, 4], [4], [0]];
-console.log(hasDeadlock(connections));
