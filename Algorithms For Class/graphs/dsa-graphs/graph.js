@@ -28,6 +28,10 @@ class Graph {
     v2.adjacent.add(v1);
   }
 
+  addEdgeDir(v1, v2) {
+    v1.adjacent.add(v2);
+  }
+
   // this function accepts two vertices and updates their adjacent values to remove the other vertex
   removeEdge(v1, v2) {
     v1.adjacent.delete(v2);
