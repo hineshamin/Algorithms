@@ -36,5 +36,3 @@ function checkSub(arr, start) {
   }
   return [length, j - 1];
 }
-
-console.log(cityStreetLights([3, 3, 1, 2, 1, 2, 1, 3, 3]));
