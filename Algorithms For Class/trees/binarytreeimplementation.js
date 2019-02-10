@@ -90,6 +90,24 @@ class Node {
     bfs(this);
     return ser;
   }
+
+  //Find the longest path in the binary tree
+  longestPath() {
+    let longest = [];
+    let currPath = [];
+    function dfs(currNode) {
+      if (!currNode) {
+        if (currPath.length > longest.length) longest = [...currPath];
+        return;
+      }
+      currPath.push(currNode.value);
+      dfs(currNode.left);
+      dfs(currNode.right);
+      currPath.pop();
+    }
+    dfs(this);
+    console.log(longest);
+  }
 }
 
 //Class for binary tree
@@ -112,6 +130,11 @@ class Tree {
   areCousins(n1, n2) {
     return this.root.areCousins(n1, n2);
   }
+
+  //Finds the longest path in a binary tree
+  longestPath() {
+    return this.root.longestPath();
+  }
 }
 
 //Make a binary tree
@@ -129,8 +152,9 @@ n2.left = n4;
 n2.right = n5;
 n3.right = n6;
 n6.left = n7;
-
 let t = new Tree(n1);
+
+console.log(t.longestPath());
 
 module.exports = {
   Tree,
